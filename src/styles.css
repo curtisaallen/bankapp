@@ -1,0 +1,244 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+body {
+    background: url('./assets/background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.clearfix::after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+ }
+ *:focus {
+    outline: none;
+}
+header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #EE7033;
+    padding: 1em 0;
+}
+.wrapper {
+    margin: auto;
+    max-width: 75rem;
+}
+
+.sidebar .box-header, .content .box-header  {
+    background-color: #0C8397;
+    padding: 11px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+}
+.box-header .icon {
+    width: 29px;
+    top: 8px;
+    left: 18px;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.flex-container {
+    display: flex;
+    margin-top: 2em;
+}
+
+.content {
+    flex: 1;
+    background-color: #ffffff;
+    -webkit-box-shadow: 30px 32px 15px -32px rgba(0,0,0,0.47);
+    -moz-box-shadow: 30px 32px 15px -32px rgba(0,0,0,0.47);
+    box-shadow: 30px 32px 15px -32px rgba(0,0,0,0.47);
+    align-self: self-end;
+}
+
+.sidebar {
+    flex: 0 1 30%;
+    margin-right: 2em;
+    background-color: #ffffff;
+    -webkit-box-shadow: 30px 32px 15px -32px rgba(0,0,0,0.47);
+    -moz-box-shadow: 30px 32px 15px -32px rgba(0,0,0,0.47);
+    box-shadow: 30px 32px 15px -32px rgba(0,0,0,0.47);
+    margin-bottom: 1em;
+    align-self: self-end;
+}
+
+.box-container {
+    padding: 1em;
+}
+
+.box-container label {
+    display: block;
+    color: #000000;
+    font-weight: bolder;
+    font-size: 14px;
+    word-spacing: 2px;
+    margin-bottom: 0;
+}
+
+.box-container input {
+    border: 0;
+    padding: 5px 0 5px 0;
+    border-bottom: 2px solid #D6D2CE;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.box-container .btn {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #EE7033;
+    border-color: #EE7033;
+    float: right;
+}
+
+.box-control {
+    display: flex;
+}
+.box-control-left {
+    flex: 0 1 36%;
+}
+.box-control-right {
+    flex: 1;
+    display: flex;
+}
+.box-control-right p {
+    flex: 0 1 21%;
+    padding: 0;
+    text-align: center;
+    font-weight: bolder;
+    margin: 13px 0 0 0;
+}
+.box-control-right ul {
+    flex: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border: 1px solid #D6D2CE;
+    border-right: none;
+    height: 40px;
+}
+.box-control-right ul li {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #D6D2CE;  
+    font-size: 12px;
+    text-transform: uppercase; 
+}
+.box-control-right ul li a {
+    color: #393632;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-weight: 600;
+}
+
+.box-control-right ul li div {
+    color: #393632;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-weight: 600;
+}
+
+.box-control-left input {
+    padding: 10px 0 10px 0;
+}
+
+.transaction {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction li {
+    display: flex;
+    border: 1px solid #D6D2CE;
+}
+
+.merchantTitle h2 {
+    font-size: 15px;
+    margin: 0;
+}
+.merchantTitle p {
+    margin: 0;
+    font-size: 11px;
+}
+
+.merchantLogo img {
+    width: 40px;
+    height: 40px;
+}
+
+.categoryCode {
+    flex: 0 1 10px;
+    background-color: green;
+}
+.transactionDate {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.merchantTitle {
+    flex: 0 1 53%; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+}
+.merchantLogo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 4px;
+}
+.amount {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overdraft {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb; 
+    text-align: center;
+    padding: 1em;
+}
+
+@media screen and (max-width: 1082px){
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    } 
+    .sidebar {
+        flex: 1;
+        margin-right: 0;
+        align-self: inherit;
+    } 
+    .content {
+        align-self: inherit; 
+    }  
+}

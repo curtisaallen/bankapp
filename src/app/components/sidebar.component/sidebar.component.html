@@ -1,0 +1,35 @@
+            <div class="box-header">
+                <img src="./assets/icons/exchange.png" alt="" class="icon" />
+                Make a Transfer
+            </div>
+            <div class="box-container clearfix">
+            <form (ngSubmit)="onSubmit(form)" [formGroup]="form">
+                <div>
+                    <label for="accountfrom">FROM ACCOUNT</label>
+                    <input type="text" id="accountfrom" formControlName="accountfrom" required />
+                    <div *ngIf="form.controls['accountfrom'].errors && !form.controls['accountfrom'].pristine" class="error-msg">
+                            <div [hidden]="!form.controls['accountfrom'].errors.required">From Account is required.</div>
+                            <div [hidden]="!form.controls['accountfrom'].errors.patternInvalid">From Account is invalid.</div>
+                    </div>
+                </div>
+                <div>
+                    <label for="accountto">TO ACCOUNT</label>
+                    <input type="text" id="accountto" formControlName="accountto" required />
+                    <div *ngIf="form.controls['accountto'].errors && !form.controls['accountto'].pristine" class="error-msg">
+                            <div [hidden]="!form.controls['accountto'].errors.required">Account To is required.</div>
+                            <div [hidden]="!form.controls['accountto'].errors.patternInvalid">Account To is invalid.</div>
+                    </div>
+                </div>
+                <div>
+                    <label for="amount">AMOUNT</label>
+                    <input type="number" id="amount" formControlName="amount" required />
+                    <div *ngIf="form.controls['amount'].errors && !form.controls['amount'].pristine" class="error-msg">
+                            <div [hidden]="!form.controls['amount'].errors.required">Amount is required.</div>
+                            <div [hidden]="!form.controls['amount'].errors.patternInvalid">Amount is invalid.</div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn" [disabled]="form.invalid">Submit</button>
+                </div>
+            </form>
+            </div>

@@ -1,0 +1,56 @@
+<div class="flex-container">
+<aside class="sidebar">
+        <app-sidebar (submitedtransfer)=onTransferClicked($event)></app-sidebar>
+</aside>
+<section class="content">  
+            <div class="overdraft" *ngIf="overdraft">{{overdraft}}</div>
+            <div class="box-header">
+                <img src="./assets/icons/suitcase.png" alt="" class="icon" />
+                Recent Transactions
+            </div>
+           <div class="box-container">
+               <div class="box-control">
+                    <div class="box-control-left">
+                         <input [ngModel]="filterBy" (ngModelChange)="filterSearchInput($event)" type="text" id="search" name="search" value="" placeholder="Search by typing…" />
+                    </div>  
+                    <div class="box-control-right">
+                           <p>
+                                Sort by
+                           </p>
+                            <ul>
+                                <li>
+                                    <a href="#" (click)="sortType('date', $event)">DATE</a>
+                                </li>
+                                <li>
+                                    <a href="#" (click)="sortType('payment', $event)">Payment Type</a>
+                                </li>
+                                <li>
+                                    <a href="#" (click)="sortType('amount', $event)">AMOUNT</a>
+                                </li>
+                            </ul>
+                    </div>  
+               </div>
+                <ul class="transaction">
+                    <li *ngFor='let transaction of transactions'>
+                            <div class="categoryCode" [style.background-color]="getBackgroundColor(transaction.categoryCode)">
+                            </div> 
+                            <div class="transactionDate">
+                                    {{transaction.transactionDate | date:'MMM d'}}
+                            </div>
+                            <div class="merchantLogo">
+                                <img [src]="transaction.merchantLogo" />
+                            </div> 
+                            <div class="merchantTitle">
+                                <h2>{{transaction.merchant}}</h2>
+                                <p>{{transaction.transactionType}}</p>
+                            </div>
+                            <div class="amount">
+                                 -{{transaction.amount | currency}}
+                            </div>       
+                    </li>
+                  
+                
+                </ul> 
+            </div>
+</section>
+</div>
